@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Semaforo.iml" filepath="$PROJECT_DIR$/.idea/modules/Semaforo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Semaforo_main.iml" filepath="$PROJECT_DIR$/.idea/modules/Semaforo_main.iml" group="Semaforo" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/Semaforo_test.iml" filepath="$PROJECT_DIR$/.idea/modules/Semaforo_test.iml" group="Semaforo" />
+    </modules>
+  </component>
+</project>
