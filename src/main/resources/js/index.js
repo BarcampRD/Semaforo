@@ -1,5 +1,5 @@
 function start() {
-    var maxTime = 2 * 60, mins, secs, momento = $("#momento");
+    var maxTime = 1 * 60, mins, secs, momento = $("#momento"), imagen =  $("#imagen");
     var i = 0;
     var interval = setInterval(function () {
         mins = parseInt(maxTime / 60, 10);
@@ -7,14 +7,15 @@ function start() {
 
         --maxTime;
         var val = maxTime;
-        if (val < 1*60 && val > 0) {
+        if (val < 0.5*60 && val > 0) {
             momento.text('Tiempo de preguntas');
-            document.body.style.backgroundColor = "yellow";
+            //document.body.style.backgroundColor = "yellow";
+            imagen.attr('src', '/img/yellow.png');
         } else if (val === 0) {
             momento.text('Fin de la tanda');
-            document.body.style.backgroundColor = "red";
-            momento.addClass('fin-tanda-color');
-            $("#button-start").removeClass('hidden');
+            //document.body.style.backgroundColor = "red";
+            imagen.attr('src', '/img/red.png');
+            //momento.addClass('fin-tanda-color');
             clearInterval(interval);
         }
     }, 1000);
@@ -25,6 +26,7 @@ $(document).ready(function () {
     button.on('click', function () {
         button.addClass('hidden');
         momento.text("Charla");
+        $("#imagen").removeClass('hidden');
         //odoo.default({ el:'.js-odoo', from: '', to: 'Charla', animationDelay: 1000 });
         start();
     });

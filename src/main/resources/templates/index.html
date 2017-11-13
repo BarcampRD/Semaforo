@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Semáforo</title>
+    <title>Semaforo</title>
     <!-- CSS -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Josefin+Sans:300,400|Roboto:300,400,500">
     <link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css">
@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="/assets/css/style.css">
 
     <!-- Favicon and touch icons -->
-    <link rel="shortcut icon" href="/assets/ico/favicon.png">
+    <link rel="shortcut icon" href="/assets/ico/favicon.ico">
     <link rel="apple-touch-icon-prec1omposed" sizes="144x144" href="/assets/ico/apple-touch-icon-144-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/ico/apple-touch-icon-114-precomposed.png">
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/ico/apple-touch-icon-72-precomposed.png">
@@ -31,23 +31,24 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="index.html">Bootstrap Navbar Menu Template</a>
+            <a class="navbar-brand" href="/">Bootstrap Navbar Menu Template</a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="top-navbar-1">
+        <!--<div style="margin-top: 10px" class="collapse navbar-collapse" id="top-navbar-1">
             <ul class="nav navbar-nav navbar-right">
                 <li><a href="#">Home</a></li>
             </ul>
-        </div>
+        </div>-->
     </div>
 </nav>
 
 <div class="container">
-    <button id="button-start" style="margin-top: 30%;" class="btn btn-primary" type="button">Comenzar</button>
-    <h1 id="momento" style="position: absolute;bottom: 0; right: 10px;" ></h1>
-<!--
-    <div class="js-odoo" style=" background-color:red; position: absolute;bottom: 0; right: 0; height: 200px; width: 700px;"></div>
--->
+    <img id="imagen" style="margin-top: 15%" src="/img/green.png" class="hidden">
+    <button id="button-start" style="margin-top: 30%;" class="btn btn-primary"
+            type="button">Comenzar
+    </button>
+    <h1 id="momento" style="position: absolute;bottom: 0; right: 10px;"></h1>
+
 </div>
 
 <!-- Javascript -->
