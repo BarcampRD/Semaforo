@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" manifest="semaforo.appcache">
 <head>
     <meta charset="UTF-8">
     <title>Semaforo</title>
@@ -12,10 +12,6 @@
 
     <!-- Favicon and touch icons -->
     <link rel="shortcut icon" href="/assets/ico/favicon.ico">
-    <link rel="apple-touch-icon-prec1omposed" sizes="144x144" href="/assets/ico/apple-touch-icon-144-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/assets/ico/apple-touch-icon-114-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/assets/ico/apple-touch-icon-72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" href="/assets/ico/apple-touch-icon-57-precomposed.png">
     <script src="/js/jquery.min.js"></script>
     <script src="/js/odoo.js"></script>
     <script type="text/javascript" src="/js/index.js"></script>
@@ -27,13 +23,11 @@
         <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#top-navbar-1">
                 <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
             </button>
             <a style="padding: 0px;" href="/"><img style="height: 110px; padding: 15px; width: auto;"
-                                                   src="/assets/img/l.png"> <img
-                    style="position: absolute; height: 110px; padding: 15px; width: auto;" src="/assets/img/letras.png"></a>
+                                                   src="/assets/img/l.png">
+                <img style="position: absolute; height: 110px; padding: 15px; width: auto;"
+                     src="/assets/img/letras.png"></a>
         </div>
         <!-- Collect the nav links, forms, and other content for toggling -->
         <!--<div style="margin-top: 10px" class="collapse navbar-collapse" id="top-navbar-1">
@@ -45,12 +39,16 @@
 </nav>
 
 <div class="container">
-    <img id="imagen" style="margin-top: 15%" src="/img/green.png" class="hidden">
-    <button id="button-start" style="margin-top: 30%;" class="btn btn-primary"
-            type="button">Comenzar
+    <img id="imagen-verde" style="margin-top: 5%" src="/img/green.png" class="hidden">
+    <img id="imagen-yellow" style="margin-top: 5%" src="/img/yellow.png" class="hidden">
+    <img id="imagen-red" style="margin-top: 5%" src="/img/red.png" class="hidden">
+    <h1 id="timer" ></h1>
+    <button id="button-start" style="margin-top: 30%;" class="btn btn-primary" type="button">Comenzar</button>
+    <button id="button-restart" style="position: absolute; bottom: 15px; left: 10px;" class="btn btn-primary hidden"
+            type="button" onclick="start()">Volver a comenzar
     </button>
     <h1 id="momento" style="position: absolute;bottom: 0; right: 10px;"></h1>
-
+    <!--<div style="position: absolute;bottom: 0; right: 10px; font-size: 40px;" class="js-odoo"></div>-->
 </div>
 
 <!-- Javascript -->

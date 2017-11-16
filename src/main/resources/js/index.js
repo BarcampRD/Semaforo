@@ -1,33 +1,42 @@
 function start() {
-    var maxTime = 1 * 60, mins, secs, momento = $("#momento"), imagen =  $("#imagen");
-    var i = 0;
+    var maxTime = 0.5 * 60, mins, secs, momento = $("#momento"), imagen = $("#imagen");
+
+    momento.text("Charla");
+    $("#imagen-verde").removeClass('hidden');
+    $("#imagen-red").addClass("hidden");
+    $("#button-restart").addClass("hidden");
+
     var interval = setInterval(function () {
+
+        --maxTime;
+
         mins = parseInt(maxTime / 60, 10);
         secs = parseInt(maxTime % 60, 10);
 
-        --maxTime;
+        var minutes = mins < 10 ? "0" + mins : mins;
+        var seconds = secs < 10 ? "0" + secs : secs;
+        $("#timer").text(minutes + ":" + seconds);
+
         var val = maxTime;
-        if (val < 0.5*60 && val > 0) {
+        if (val < 0.25 * 60 && val > 0) {
+            $("#imagen-verde").addClass("hidden");
+            $("#imagen-yellow").removeClass("hidden");
             momento.text('Tiempo de preguntas');
-            //document.body.style.backgroundColor = "yellow";
-            imagen.attr('src', '/img/yellow.png');
         } else if (val === 0) {
+            $("#imagen-red").removeClass("hidden");
+            $("#imagen-yellow").addClass("hidden");
+            $("#button-restart").removeClass("hidden");
             momento.text('Fin de la tanda');
-            //document.body.style.backgroundColor = "red";
-            imagen.attr('src', '/img/red.png');
-            //momento.addClass('fin-tanda-color');
             clearInterval(interval);
         }
     }, 1000);
 }
 
 $(document).ready(function () {
-    var button = $("#button-start"), momento = $("#momento");
+    var button = $("#button-start");
     button.on('click', function () {
         button.addClass('hidden');
-        momento.text("Charla");
-        $("#imagen").removeClass('hidden');
-        //odoo.default({ el:'.js-odoo', from: '', to: 'Charla', animationDelay: 1000 });
+        // odoo.default({el: '.js-odoo', from: '', to: 'Charla', animationDelay: 1000});
         start();
     });
 });
