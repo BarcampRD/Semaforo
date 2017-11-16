@@ -1,5 +1,5 @@
 function start() {
-    var maxTime = 0.5 * 60, mins, secs, momento = $("#momento"), imagen = $("#imagen");
+    var maxTime = 0.5 * 60, mins, secs, momento = $("#momento");
 
     momento.text("Charla");
     $("#imagen-verde").removeClass('hidden');
