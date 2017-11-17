@@ -19,6 +19,7 @@ function start() {
         $("#timer").text(minutes + ":" + seconds);
 
         var val = maxTime;
+        //Cuando falten 10 minutos cambia a color amarillo para tiempo de preguntas.
         if (val < 10 * 60 && val > 0) {
             $("#imagen-verde").addClass("hidden");
             $("#imagen-yellow").removeClass("hidden");
