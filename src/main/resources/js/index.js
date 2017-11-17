@@ -1,5 +1,6 @@
 function start() {
-    var maxTime = 60 * 60, mins, secs, momento = $("#momento");
+                //Cantidad de minutos * 60 segs.
+    var maxTime = 50 * 60, mins, secs, momento = $("#momento");
 
     momento.text("Charla");
     $("#imagen-verde").removeClass('hidden');
@@ -18,7 +19,7 @@ function start() {
         $("#timer").text(minutes + ":" + seconds);
 
         var val = maxTime;
-        if (val < 0.25 * 60 && val > 0) {
+        if (val < 10 * 60 && val > 0) {
             $("#imagen-verde").addClass("hidden");
             $("#imagen-yellow").removeClass("hidden");
             momento.text('Tiempo de preguntas');
