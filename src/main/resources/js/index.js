@@ -1,5 +1,5 @@
 function start() {
-    var maxTime = 0.5 * 60, mins, secs, momento = $("#momento");
+    var maxTime = 60 * 60, mins, secs, momento = $("#momento");
 
     momento.text("Charla");
     $("#imagen-verde").removeClass('hidden');
@@ -36,6 +36,7 @@ $(document).ready(function () {
     var button = $("#button-start");
     button.on('click', function () {
         button.addClass('hidden');
+        $("#timer").removeClass('hidden');
         // odoo.default({el: '.js-odoo', from: '', to: 'Charla', animationDelay: 1000});
         start();
     });
