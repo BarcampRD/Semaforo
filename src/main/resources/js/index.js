@@ -1,6 +1,9 @@
 function start() {
                 //Cantidad de minutos * 60 segs.
-    var maxTime = 50 * 60, mins, secs, momento = $("#momento");
+
+    var minTotal = 3.5, minAmarillo = 1;
+
+    var maxTime = minTotal * 60, mins, secs, momento = $("#momento");
 
     momento.text("Charla");
     $("#imagen-verde").removeClass('hidden');
@@ -20,7 +23,7 @@ function start() {
 
         var val = maxTime;
         //Cuando falten 10 minutos cambia a color amarillo para tiempo de preguntas.
-        if (val < 10 * 60 && val > 0) {
+        if (val < minAmarillo * 60 && val > 0) {
             $("#imagen-verde").addClass("hidden");
             $("#imagen-yellow").removeClass("hidden");
             momento.text('Tiempo de preguntas');
@@ -28,7 +31,7 @@ function start() {
             $("#imagen-red").removeClass("hidden");
             $("#imagen-yellow").addClass("hidden");
             $("#button-restart").removeClass("hidden");
-            momento.text('Fin de la tanda');
+            momento.text('Fin');
             clearInterval(interval);
         }
     }, 1000);
